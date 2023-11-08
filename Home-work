@@ -1,0 +1,21 @@
+public class FindUniqueElement {
+    public static int findUniqueElement(int[] arr) {
+        int uniqueElement = arr[0];
+
+        for (int i = 1; i < arr.length; i += 2) {
+            if (arr[i] != uniqueElement) {
+                return uniqueElement;
+            }
+            uniqueElement = arr[i + 1];
+        }
+
+        return uniqueElement;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 1, 2, 2, 3, 4, 4};
+        int uniqueElement = findUniqueElement(arr);
+        
+        System.out.println("Уникальный элемент: " + uniqueElement);
+    }
+}
